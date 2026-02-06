@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Someone Special ❤️</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <div id="app">
+        <div id="canvas-container"></div>
+
+        <div id="progress-container">
+            <div id="progress-bar"></div>
+        </div>
+
+        <div id="content">
+            <!-- Step 1: Initial Reveal -->
+            <div class="step active" id="step1">
+                <div class="emoji heart-beat">❤️</div>
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 text-gradient">Hey Beautiful</h1>
+                <p class="text-xl text-gray-700 mb-8">I made something special for you...</p>
+                <p class="text-xl text-gray-700 mb-8">
+                    Somewhere between ordinary days and quiet moments,<br>
+                    you became someone I genuinely care about.
+                    <br>
+                    So today, <br> I wanted to do something different.<br>
+                    Something small.. but meaningful.
+                    <br>
+                    Welcome to a place made just for you.
+                </p>
+                <button class="btn" id="start-btn">Let's Begin</button>
+            </div>
+
+            <!-- Step 2: Birthday Message -->
+            <div class="step" id="step2">
+                <div class="emoji">🎉</div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gradient">Happy Birthday!</h2>
+                <h3 class="text-2xl md:text-2xl font-bold mb-6 text-gradient">to my Cutie pie ❤️</h3>
+                <p class="text-lg text-gray-700 mb-6">
+                <ul class="text-lg text-gray-700 mb-6 space-y-3 flex flex-col items-center">
+                    <li class="flex items-center gap-3 text-center">
+                        <span class="text-pink-500">💖</span>
+                        <span>On your special day, I want you to know how amazing you are.</span>
+                        <span class="text-pink-500">💖</span>
+                    </li>
+                    <li class="flex items-center gap-3 text-center">
+                        <span class="text-pink-500">✨</span>
+                        <span>Your smile brightens my world.</span>
+                        <span class="text-pink-500">✨</span>
+                    </li>
+                    <li class="flex items-center gap-3 text-center">
+                        <span class="text-pink-500">🎶</span>
+                        <span>Your laughter is my favorite melody.</span>
+                        <span class="text-pink-500">🎶</span>
+                    </li>
+                    <li class="flex items-center gap-3 text-center">
+                        <span class="text-pink-500">🌸</span>
+                        <span>Your presence makes every moment magical.</span>
+                        <span class="text-pink-500">🌸</span>
+                    </li>
+                    <li class="flex items-center gap-3 text-center">
+                        <span class="text-pink-500">☀️</span>
+                        <span>You make normal days feel lighter.</span>
+                        <span class="text-pink-500">☀️</span>
+                    </li>
+                </ul>
+                </p>
+
+                <button class="btn" id="next-btn-2">What makes you special?</button>
+            </div>
+
+            <!-- Step 3: Reasons You're Amazing -->
+            <div class="step" id="step3">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8 text-gradient">Here's why you're incredible</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                    <div class="reason-card">
+                        <div class="emoji text-3xl">✨</div>
+                        <h3 class="text-xl font-bold mb-2 text-pink-600">Your Kindness</h3>
+                        <p class="text-gray-700">
+                            You have this natural way of being kind,
+                            without even trying.
+                            You make me feel heard and understood,
+                            even when you don’t say much.
+                        </p>
+                    </div>
+
+                    <div class="reason-card">
+                        <div class="emoji text-3xl">😊</div>
+                        <h3 class="text-xl font-bold mb-2 text-pink-600">Your Smile</h3>
+                        <p class="text-gray-700">
+                            You light up every place you walk into,
+                            and somehow stay in my thoughts all day.
+                            You bring calm where there’s noise,
+                            and light where there’s doubt.
+                        </p>
+                    </div>
+
+                    <div class="reason-card">
+                        <div class="emoji text-3xl">🌟</div>
+                        <h3 class="text-xl font-bold mb-2 text-pink-600">Your Spirit</h3>
+                        <p class="text-gray-700">
+                            There’s something about your presence
+                            that instantly lifts my mood.
+                            You make my life feel happier 
+                            just by being you.
+                        </p>
+                    </div>
+                </div>
+                <!-- <button class="btn" id="next-btn-3">A Little Surprise</button> -->
+                <button class="btn" id="next-btn-3">Things i want to say</button>
+            </div>
+
+            <!-- Step 4: A Thought -->
+            <div class="step" id="step4">
+                <div class="emoji"> 🌙 </div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gradient">
+                    Things I Don’t Always Say 💭
+                </h2>
+                <p class="text-lg text-gray-700 mb-6">
+                    I may not always find the perfect words,
+                    but caring about you has never been confusing.
+                    <br>
+                    I have never faked my care or my love,
+                    no matter what you might think of me.<br>
+                    Everything I feel comes straight from my heart 💖
+                    <br>
+                    I admire your strength,
+                    your softness,
+                    and the way you keep going even on the hardest days.
+                    <br>
+                    And if you ever doubt yourself,
+                    just remember there’s someone who believes in you
+                    more than you could ever imagine.
+                </p>
+                <button class="btn" id="next-btn-4">Keep Going</button>
+            </div>
+
+            <!-- Step 5: Appreciation -->
+            <div class="step" id="step5">
+                <div class="emoji">📸</div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gradient">Remember When...</h2>
+                <p class="text-lg text-gray-700 mb-6">
+                    Do you remember the first day we met,
+                    when we had our first coffee together?
+                    <br>
+                    You looked so pretty that day,
+                    honestly, just the way you always do.
+                    <br>
+                    I’m really glad I met you on that day.
+                    It’s a memory I’ll always hold close to my heart ☕💖
+                </p>
+                <div class="bg-gradient-to-r from-pink-200 to-rose-200 rounded-xl p-8 mb-8 
+                    grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <img src="images/firstday/img_001.JPG" class="memory-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer transition transform hover:scale-105
+                        " alt="Memory 1">
+                    <img src="images/firstday/img_002.JPG" class="memory-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer transition transform hover:scale-105
+                        " alt="Memory 2">
+                    <img src="images/firstday/img_003.JPG" class="memory-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer transition transform hover:scale-105
+                        " alt="Memory 3">
+                    <img src="images/firstday/img_004.JPG" class="memory-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer transition transform hover:scale-105
+                        " alt="Memory 3">
+                </div>
+
+
+                <p class="text-lg text-gray-700 mb-6">
+                    The day I hate the most is the day you cried on my shoulder for the first time.
+                    <br>Not because of you, but because I never wanted to see you hurt.
+                    <br>
+                    Even then, you looked so cute babee..
+                    And I’m truly glad you thought of me as the person
+                    you could lean on and cry with your heart open.
+                    <br>That trust means more to me than you know 🤍
+                </p>
+                <div class="bg-gradient-to-r from-pink-200 to-rose-200 rounded-xl p-8 mb-8 
+                    grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <img src="images/SecondSlide/img_001.JPG" class="memory-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer transition transform hover:scale-105
+                        " alt="Memory 1">
+                    <img src="images/SecondSlide/img_002.JPG" class="memory-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer transition transform hover:scale-105
+                        " alt="Memory 2">
+                    <img src="images/SecondSlide/img_003.JPG" class="memory-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer transition transform hover:scale-105
+                        " alt="Memory 3">
+                    <img src="images/SecondSlide/img_004.JPG" class="memory-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer transition transform hover:scale-105
+                        " alt="Memory 4">
+                    <img src="images/SecondSlide/img_005.JPG" class="memory-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer transition transform hover:scale-105
+                        " alt="Memory 5">
+                    <img src="images/SecondSlide/img_006.JPG" class="memory-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer transition transform hover:scale-105
+                        " alt="Memory 6">
+                </div>
+
+
+                <p class="text-lg text-gray-700 mb-6">
+                    This is the greatest day of all, because someone very special was born on this day.
+                    <br>
+                    Just look at that cuteness, that smile
+                    it melts my heart every single time.
+                    <br>
+                    I’m so glad that, even for a moment,
+                    I was able to celebrate your birthday with you.
+                    <br>
+                    And I truly hope I get to do this
+                    for the rest of our lives 🎂💖
+                </p>
+                <div class="bg-gradient-to-r from-pink-200 to-rose-200 rounded-xl p-8 mb-8 
+                    grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <img src="images/birthday/img_001.JPG" class="memory-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer transition transform hover:scale-105
+                        " alt="Memory 1">
+                    <img src="images/birthday/img_002.JPG" class="memory-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer transition transform hover:scale-105
+                        " alt="Memory 2">
+                    <img src="images/birthday/img_003.JPG" class="memory-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer transition transform hover:scale-105
+                        " alt="Memory 3">
+                    <img src="images/birthday/img_004.JPG" class="memory-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer transition transform hover:scale-105
+                        " alt="Memory 4">
+                    <img src="images/birthday/img_005.JPG" class="memory-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer transition transform hover:scale-105
+                        " alt="Memory 5">
+                    <img src="images/birthday/img_006.JPG" class="memory-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer transition transform hover:scale-105
+                        " alt="Memory 6">
+                </div>
+
+
+                <p class="text-lg text-gray-700 mb-6">
+                    It’s 14th April—the first birthday of my life where I received so many gifts from the person I love
+                    the most 🤍
+                    <br>
+                    I’ll never be able to thank you enough.
+                    You don’t know how close I was to crying,
+                    just from the joy you brought into my heart 💖
+                    <br>
+                    You turned my once meaningless birthday
+                    into something truly special and unforgettable.
+                </p>
+                <div class="bg-gradient-to-r from-pink-200 to-rose-200 rounded-xl p-8 mb-8 
+                    grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <img src="images/mybirthday/img_001.jpeg" class="memory-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer transition transform hover:scale-105
+                        " alt="Memory 1">
+                    <img src="images/mybirthday/img_002.jpeg" class="memory-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer transition transform hover:scale-105
+                        " alt="Memory 2">
+                    <img src="images/mybirthday/img_003.JPG" class="memory-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer transition transform hover:scale-105
+                        " alt="Memory 3">
+                    <img src="images/mybirthday/img_004.JPG" class="memory-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer transition transform hover:scale-105
+                        " alt="Memory 4">
+                    <img src="images/mybirthday/img_005.JPG" class="memory-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer transition transform hover:scale-105
+                        " alt="Memory 5">
+                    <img src="images/mybirthday/img_006.JPG" class="memory-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer transition transform hover:scale-105
+                        " alt="Memory 6">
+                </div>
+
+
+                <p class="text-lg text-gray-700 mb-6">
+                    Last but not least, I want to say sorry.<br>
+                    Sorry for every mistake I made,
+                    and sorry for the times I made you cry.
+                    <br>
+                    And I also want to say thank you.<br>
+                    Thank you, Babe for handling me with so much patience.
+                    Thank you for understanding me,
+                    even when I wasn’t myself.
+                    <br>
+                    Thank you for always supporting me,
+                    for your care, your love, and everything you do.
+                    <br>
+                    You are the best woman in this world.
+                    And I truly hope I can be the same for you 🤍
+                    <br>
+                    I’ve never loved anyone the way I love you.
+                    You are too precious to me.<br>
+                    I love you, jaan 💖
+                </p>
+                <div class="bg-gradient-to-r from-pink-200 to-rose-200 rounded-xl p-8 mb-8 
+                    grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <img src="images/together/img_001.JPG" class="memory-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer transition transform hover:scale-105
+                        " alt="Memory 1">
+                    <img src="images/together/img_002.JPG" class="memory-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer transition transform hover:scale-105
+                        " alt="Memory 2">
+                    <img src="images/together/img_003.JPG" class="memory-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer transition transform hover:scale-105
+                        " alt="Memory 3">
+                    <img src="images/together/img_004.JPG" class="memory-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer transition transform hover:scale-105
+                        " alt="Memory 4">
+                    <img src="images/together/img_005.JPG" class="memory-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer transition transform hover:scale-105
+                        " alt="Memory 5">
+                    <img src="images/together/img_006.JPG" class="memory-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer transition transform hover:scale-105
+                        " alt="Memory 6">
+                    <img src="images/together/img_007.JPG" class="memory-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer transition transform hover:scale-105
+                        " alt="Memory 7">
+                    <img src="images/together/img_008.JPG" class="memory-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer transition transform hover:scale-105
+                        " alt="Memory 8">
+                    <img src="images/together/img_009.JPG" class="memory-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer transition transform hover:scale-105
+                        " alt="Memory 9">
+                    <img src="images/together/img_010.JPG" class="memory-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer transition transform hover:scale-105
+                        " alt="Memory 10">
+                    <img src="images/together/img_011.JPG" class="memory-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer transition transform hover:scale-105
+                        " alt="Memory 11">
+                    <img src="images/together/img_012.JPG" class="memory-img w-full h-64 object-cover rounded-xl shadow-lg cursor-pointer transition transform hover:scale-105
+                        " alt="Memory 12">
+                </div>
+
+                <button class="btn" id="next-btn-5">A Few Things for You</button>
+            </div>
+
+            <!-- Step 6: Gifts - Flowers -->
+            <div class="step" id="step6">
+                <div class="emoji">🎁</div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gradient">
+                    Here is a little Gifts for you..
+                </h2>
+                <p class="text-lg text-gray-700 mb-6">
+                    Flowers don’t last forever.
+                    <br>
+                    But they remind us of moments,
+                    feelings,
+                    and the warmth someone brings into our life.
+                    <br>
+                    These are for you,
+                    just a small reflection of your softness and grace.
+                </p>
+
+                <div class="bg-gradient-to-r from-pink-200 to-rose-200 rounded-xl p-8 mb-8">
+                    <img src="images/gifts/flowers/img_001.JPG" class="memory-img w-full max-h-[420px] object-cover rounded-xl shadow-lg 
+                        cursor-pointer transition transform hover:scale-[1.02]" alt="My Gift to You">
+                </div>
+
+                <button class="btn" id="next-btn-6">Time for some Sweets</button>
+            </div>
+
+            <!-- Step 7: Chocolates -->
+            <div class="step" id="step7">
+                <div class="emoji">🎁</div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gradient">Something Sweet </h2>
+                <p class="text-lg text-gray-700 mb-6">
+                    Life isn’t always sweet.
+                    <br>
+                    But you deserve sweetness
+                    on good days,
+                    and especially on the difficult ones.
+                    <br>
+                    This is just a reminder
+                    to be kind to yourself
+                    the way you’re kind to me & everyone else.
+                </p>
+
+                <div class="bg-gradient-to-r from-pink-200 to-rose-200 rounded-xl p-8 mb-8">
+                    <img src="images/gifts/chocolates/img_001.JPG" class="memory-img w-full max-h-[420px] object-cover rounded-xl shadow-lg 
+                        cursor-pointer transition transform hover:scale-[1.02]" alt="My Gift to You">
+                </div>
+                <button class="btn" id="next-btn-7">Something Pretty for You</button>
+            </div>
+
+
+
+            <!-- Step 8: Cloths -->
+            <div class="step" id="step8">
+                <div class="emoji">👗</div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gradient"> Not Perfect, But Chosen with Love.. </h2>
+                <p class="text-lg text-gray-700 mb-6">
+                    I imagined you in this.
+                    <br>
+                    The way you’d smile,
+                    the way you’d carry it,
+                    the way the moment would quietly belong to you.
+                    <br>
+                    This isn’t just a dress.
+                    <br>
+                    It’s a reminder —
+                    of how effortlessly beautiful you are,
+                    inside and out.
+                </p>
+
+                <div class="bg-gradient-to-r from-pink-200 to-rose-200 rounded-xl p-8 mb-8">
+                    <img src="images/gifts/dress/img_001.PNG" class="memory-img w-full max-h-[420px] object-cover rounded-xl shadow-lg 
+                        cursor-pointer transition transform hover:scale-[1.02]" alt="My Gift to You">
+                </div>
+                <br>
+                <div class="bg-gradient-to-r from-pink-200 to-rose-200 rounded-xl p-8 mb-8">
+                    <img src="images/gifts/dress/img_002.PNG" class="memory-img w-full max-h-[420px] object-cover rounded-xl shadow-lg 
+                        cursor-pointer transition transform hover:scale-[1.02]" alt="My Gift to You">
+                </div>
+                <br>
+                <div class="bg-gradient-to-r from-pink-200 to-rose-200 rounded-xl p-8 mb-8">
+                    <img src="images/gifts/dress/img_003.PNG" class="memory-img w-full max-h-[420px] object-cover rounded-xl shadow-lg 
+                        cursor-pointer transition transform hover:scale-[1.02]" alt="My Gift to You">
+                </div>
+
+                <button class="btn" id="next-btn-8">One Last Thing</button>
+            </div>
+
+            <!-- Step 9: Final Wish -->
+            <div class="step" id="step9">
+                <div class="emoji">🎂</div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gradient">Happy Birthday Baby Doll..</h2>
+                <p class="text-lg text-gray-700 mb-8">
+                    Happy Birthday, Babeee.. ❤️
+                    <br>
+                    This day means so much to me, because it’s the day you were born the most beautiful soul I know.
+                    You make my life brighter just by being in it, and your smile still melts my heart every single
+                    time..
+                    <br>
+                    I feel really lucky that I get to celebrate you.
+                    Thank you for your love, your care, your patience, and for being so strong, so soft, and so
+                    special..
+                    <br>
+                    I hope this year gives you everything your heart wishes for,
+                    and I hope I get to be by your side, supporting you, loving you, and celebrating you again and
+                    again..
+                    <br>
+                </p>
+                <p class="text-xl font-semibold text-pink-600 mb-8">
+                    I love you, jaan ❤️
+                    <br> & <br>
+                    Very Very Happy Birthday to you..❤️
+                </p>
+                <button class="btn" id="confetti-btn">Celebrate!</button>
+                <p class="mt-8 text-gray-500">Made with ❤️ just for you..</p>
+            </div>
+        </div>
+    </div>
+
+    <audio id="bg-music" loop>
+        <source src="audio/song.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-[999]">
+
+        <span id="closeLightbox" class="absolute top-6 right-8 text-white text-4xl cursor-pointer">
+            &times;
+        </span>
+
+        <img id="lightbox-img" class="max-w-[90%] max-h-[90%] rounded-xl shadow-2xl">
+    </div>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
